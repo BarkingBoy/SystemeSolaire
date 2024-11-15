@@ -1,15 +1,19 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import javax.swing.*;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Création de la fenêtre principale
+        JFrame frame = new JFrame("Système Solaire 2D");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // Assure-toi que le panneau de contenu de la JFrame est un conteneur de type JPanel
+        SolarSystemPanel solarSystemPanel = new SolarSystemPanel();
+
+        // Ajout du SolarSystemPanel dans le contenu de la JFrame
+        frame.getContentPane().add(solarSystemPanel); // Utilisation de getContentPane().add(...)
+
+        // Configuration de la fenêtre
+        frame.setSize(1200, 800); // Augmentation de la taille de la fenêtre pour plus de visibilité
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
 }
